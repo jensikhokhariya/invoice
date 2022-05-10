@@ -167,11 +167,26 @@ class _In_1State extends State<In_1> {
                   Container(
                     margin: EdgeInsets.only(left: 20),
                     width: 100,
-                    child: Text("${inv.Quantity}*${inv.amount}",style: TextStyle(fontSize: 20),),
+                    child: Text("${inv.i}*${inv.amount}",style: TextStyle(fontSize: 20),),
                   ),
                 ],
               ),
-             /* Container(
+             Divider(
+               height: 30,
+               thickness: 1,
+               indent: 5,
+               endIndent: 5,
+               color: Colors.black,
+             ),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+               children: [
+                 Text("GST(${inv.d_value}%)",style: TextStyle(fontSize: 20),),
+                 Text("${int.parse(inv.amount)*inv.i*int.parse(inv.d_value)/100}",style: TextStyle(fontSize:20),),
+               ],
+             ),
+              Divider(),
+              Container(
                 margin: EdgeInsets.all(5),
                 padding: EdgeInsets.all(5),
                 height: 50,
@@ -205,7 +220,7 @@ class _In_1State extends State<In_1> {
                 indent: 5,
                 endIndent: 5,
                 color: Colors.black,
-              ),*/
+              ),
             ],
           ),
         ),

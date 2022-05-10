@@ -183,22 +183,6 @@ class _InvoiceState extends State<Invoice> {
                   ],
                 ),
                SizedBox(height: 10,),
-               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                 children: [
-                   Container(
-                      height: 50,
-                      width: 100,
-                      child: TextField(
-                        controller: Quantity,
-                        decoration: InputDecoration(
-                          focusedBorder: UnderlineInputBorder(),
-                        labelText: "Quantity"
-                        ),
-                        keyboardType: TextInputType.number,
-                      ),
-                    ),
-                 ],
-               ),
               Row(
                 children: [
                   Container(
