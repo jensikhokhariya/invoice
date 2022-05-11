@@ -22,6 +22,7 @@ class _InvoiceState extends State<Invoice> {
   TextEditingController amount = TextEditingController();
   TextEditingController Quantity = TextEditingController();
   dynamic i=0;
+  dynamic d_value='18';
 
   @override
   Widget build(BuildContext context) {
@@ -222,8 +223,58 @@ class _InvoiceState extends State<Invoice> {
                     ],
                   ),
                   SizedBox(height: 10,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("GST",style: TextStyle(fontSize: 20),),
+                    ],
+                  ),
+                  Divider(height: 30,
+                    thickness: 3,
+                    color: Colors.black,
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(5),
+                    height: 50,
+                    width: double.infinity,
+                    color: Colors.grey.shade300,
+                    child: DropdownButton<String>(
+                      value: d_value,
+                      isExpanded: true,
+                      icon: Icon(Icons.keyboard_arrow_down),
+                      elevation: 16,
+                      style: TextStyle(color: Colors.black),
+                      underline: Container(
+                        height: 3,
+                        color: Colors.black,
+                      ),
+                      onChanged: (newValue)async{
+                        setState(() {
+                          d_value=newValue!;
+                        });
+                      },
+                      items: ['3','5','8','12','18']
+                      .map<DropdownMenuItem<String>>((String value){
+                        return DropdownMenuItem(value: value,child: Text(value),);
+                      }).toList(),
+                    ),
+                  ),
                   ElevatedButton(onPressed: (){
-                    Navigator.pushNamed(context, 'page1',arguments: inmodel(c_name.text,c_email.text,c_Add.text,c_Phon.text,i_num.text, i_date.text, due_date.text, Pro_na.text, amount.text, Quantity.text));
+                    Navigator.pushNamed(context, 'page1',arguments: inmodel(
+                        c_name.text,
+                        c_email.text,
+                        c_Add.text,
+                        c_Phon.text,
+                        i_num.text,
+                        i_date.text,
+                        due_date.text,
+                        Pro_na.text,
+                        amount.text,
+                        Quantity.text,
+                        i,
+                        d_value,
+                    ));
                    },
                     child: Text("Next"),
                     style: ElevatedButton.styleFrom(primary: Colors.pink.shade800),
