@@ -288,8 +288,8 @@ class PDF{
         }
       ),
     );
-    Directory dr =await getApplicationDocumentsDirectory();
-    File file= File("${dr.path}/flutter.pdf");
+    Directory? dr =await getExternalStorageDirectory();
+    File file= File("${dr!.path}/flutter.pdf");
     file.writeAsBytes(await pdf.save());
     print(dr);
   }

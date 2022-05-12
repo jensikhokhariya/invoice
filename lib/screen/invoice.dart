@@ -23,7 +23,6 @@ class _InvoiceState extends State<Invoice> {
   TextEditingController Quantity = TextEditingController();
   dynamic i=0;
   dynamic d_value='18';
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(

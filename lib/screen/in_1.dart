@@ -13,7 +13,6 @@ class In_1 extends StatefulWidget {
 class _In_1State extends State<In_1> {
   String newvalue = " ";
   String d_value = "18%";
-
   @override
   Widget build(BuildContext context) {
     inmodel inv = ModalRoute.of(context)!.settings.arguments as inmodel;
